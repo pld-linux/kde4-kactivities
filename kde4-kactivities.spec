@@ -1,16 +1,16 @@
 %define		_state		stable
 %define		orgname		kactivities
-%define		qtver		4.8.0
+%define		qtver		4.8.1
 
 Summary:	K Desktop Environment - a C++ library for using Nepomuk activities
 Summary(pl.UTF-8):	K Desktop Environment - Biblioteka C++ do aktywności Nepomuka
 Name:		kde4-kactivities
-Version:	4.8.2
+Version:	4.8.3
 Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	be75237315c5b30ad89020e4fcc8b03c
+# Source0-md5:	9d7e66a832770558ad8641a8667e89ed
 URL:		http://www.kde.org/
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	soprano-devel
@@ -63,9 +63,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkactivities.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkactivities.so.?
 %attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_dummy.so
+%attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_globalshortcuts.so
 %attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_nepomuk.so
 %attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_slc.so
 %{_datadir}/kde4/services/activitymanager-plugin-dummy.desktop
+%{_datadir}/kde4/services/activitymanager-plugin-globalshortcuts.desktop
 %{_datadir}/kde4/services/activitymanager-plugin-nepomuk.desktop
 %{_datadir}/kde4/services/activitymanager-plugin-slc.desktop
 %{_datadir}/kde4/services/kactivitymanagerd.desktop
