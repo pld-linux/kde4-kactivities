@@ -5,12 +5,12 @@
 Summary:	K Desktop Environment - a C++ library for using Nepomuk activities
 Summary(pl.UTF-8):	K Desktop Environment - Biblioteka C++ do aktywności Nepomuka
 Name:		kde4-kactivities
-Version:	4.8.4
+Version:	4.9.0
 Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	bcbd686884c3afb020ec3da9c422e60a
+# Source0-md5:	aad068edbc3e30d108961e7d4e54dff5
 URL:		http://www.kde.org/
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	soprano-devel
@@ -60,19 +60,25 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kactivitymanagerd
-%attr(755,root,root) %{_libdir}/libkactivities.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkactivities.so.?
-%attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_dummy.so
 %attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_globalshortcuts.so
-%attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_nepomuk.so
 %attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_slc.so
-%{_datadir}/kde4/services/activitymanager-plugin-dummy.desktop
+%attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_sqlite.so
+%attr(755,root,root) %{_libdir}/kde4/activitymanager_uihandler_declarative.so
+%attr(755,root,root) %{_libdir}/kde4/activitymanager_uihandler_kdialog.so
+%attr(755,root,root) %{_libdir}/kde4/kactivitymanagerd_fileitem_linking_plugin.so
+%attr(755,root,root) %{_libdir}/kde4/kio_activities.so
+%attr(755,root,root) %{_libdir}/libkactivities.so.*.*.*
+%{_datadir}/apps/plasma/packages/org.kde.ActivityManager.UiHandler
+%{_datadir}/kde4/services/activities.protocol
 %{_datadir}/kde4/services/activitymanager-plugin-globalshortcuts.desktop
-%{_datadir}/kde4/services/activitymanager-plugin-nepomuk.desktop
 %{_datadir}/kde4/services/activitymanager-plugin-slc.desktop
+%{_datadir}/kde4/services/activitymanager-plugin-sqlite.desktop
 %{_datadir}/kde4/services/kactivitymanagerd.desktop
-%{_datadir}/kde4/services/kded/activitymanager.desktop
+%{_datadir}/kde4/services/kactivitymanagerd_fileitem_linking_plugin.desktop
 %{_datadir}/kde4/servicetypes/activitymanager-plugin.desktop
+%{_datadir}/ontology/kde/kao.ontology
+%{_datadir}/ontology/kde/kao.trig
 
 %files devel
 %defattr(644,root,root,755)
