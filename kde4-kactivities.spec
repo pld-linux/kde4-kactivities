@@ -1,16 +1,16 @@
 %define		_state		stable
 %define		orgname		kactivities
-%define		qtver		4.8.1
+%define		qtver		4.8.2
 
 Summary:	K Desktop Environment - a C++ library for using Nepomuk activities
 Summary(pl.UTF-8):	K Desktop Environment - Biblioteka C++ do aktywności Nepomuka
 Name:		kde4-kactivities
-Version:	4.9.1
+Version:	4.9.2
 Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	41d8fc71098b66efb853a9bb70b8aed3
+# Source0-md5:	dd3ed645f1ebe1d81897fb58c36aa5d5
 URL:		http://www.kde.org/
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	soprano-devel
