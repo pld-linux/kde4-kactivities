@@ -5,14 +5,15 @@
 Summary:	K Desktop Environment - a C++ library for using Nepomuk activities
 Summary(pl.UTF-8):	K Desktop Environment - Biblioteka C++ do aktywności Nepomuka
 Name:		kde4-kactivities
-Version:	4.9.5
+Version:	4.10.0
 Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	3fd44af91801291287ebd72ed6444744
+# Source0-md5:	15b30882f2ef484bc21d51a002c3313d
 URL:		http://www.kde.org/
 BuildRequires:	kde4-kdelibs-devel >= %{version}
+BuildRequires:	kde4-nepomuk-core  >= %{version}
 BuildRequires:	soprano-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -61,21 +62,33 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kactivitymanagerd
 %attr(755,root,root) %ghost %{_libdir}/libkactivities.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkactivities-models.so.?
+%attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_activityranking.so
 %attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_globalshortcuts.so
 %attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_slc.so
 %attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_sqlite.so
 %attr(755,root,root) %{_libdir}/kde4/activitymanager_uihandler_declarative.so
 %attr(755,root,root) %{_libdir}/kde4/activitymanager_uihandler_kdialog.so
+%attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_virtualdesktopswitch.so
 %attr(755,root,root) %{_libdir}/kde4/kactivitymanagerd_fileitem_linking_plugin.so
+%attr(755,root,root) %{_libdir}/kde4/kcm_activities.so
 %attr(755,root,root) %{_libdir}/kde4/kio_activities.so
+%dir %{_libdir}/kde4/imports/org/kde/activities
+%dir %{_libdir}/kde4/imports/org/kde/activities/models
+%attr(755,root,root) %{_libdir}/kde4/imports/org/kde/activities/models/libkactivities-models-component-plugin.so
 %attr(755,root,root) %{_libdir}/libkactivities.so.*.*.*
+%attr(755,root,root) %{_libdir}/libkactivities-models.so.*.*.*
 %{_datadir}/apps/plasma/packages/org.kde.ActivityManager.UiHandler
 %{_datadir}/kde4/services/activities.protocol
+%{_datadir}/kde4/services/activitymanager-plugin-activityranking.desktop
 %{_datadir}/kde4/services/activitymanager-plugin-globalshortcuts.desktop
 %{_datadir}/kde4/services/activitymanager-plugin-slc.desktop
 %{_datadir}/kde4/services/activitymanager-plugin-sqlite.desktop
+%{_datadir}/kde4/services/activitymanager-plugin-virtualdesktopswitch.desktop
 %{_datadir}/kde4/services/kactivitymanagerd.desktop
 %{_datadir}/kde4/services/kactivitymanagerd_fileitem_linking_plugin.desktop
+%{_datadir}/kde4/services/kcm_activities.desktop
+%{_datadir}/apps/activitymanager
 %{_datadir}/kde4/servicetypes/activitymanager-plugin.desktop
 %{_datadir}/ontology/kde/kao.ontology
 %{_datadir}/ontology/kde/kao.trig
@@ -84,6 +97,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_includedir}/KDE/KActivities
 %{_includedir}/kactivities
+%{_includedir}/kactivities-models
 %{_libdir}/cmake/KActivities
+%{_libdir}/cmake/KActivities-Models
 %{_pkgconfigdir}/libkactivities.pc
+%{_pkgconfigdir}/libkactivities-models.pc
 %attr(755,root,root) %{_libdir}/libkactivities.so
+%attr(755,root,root) %{_libdir}/libkactivities-models.so
