@@ -5,12 +5,12 @@
 Summary:	K Desktop Environment - a C++ library for using Nepomuk activities
 Summary(pl.UTF-8):	K Desktop Environment - Biblioteka C++ do aktywności Nepomuka
 Name:		kde4-kactivities
-Version:	4.10.5
+Version:	4.11.0
 Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	ebe4b9a11d0d92d3324b9dfe75c9b527
+# Source0-md5:	5a9e642b5a37e6b60af5b9ad71c07347
 URL:		http://www.kde.org/
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	kde4-nepomuk-core-devel  >= %{version}
@@ -65,10 +65,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libkactivities-models.so.?
 %attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_activityranking.so
 %attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_globalshortcuts.so
+%attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_nepomuk.so
 %attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_slc.so
 %attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_sqlite.so
-%attr(755,root,root) %{_libdir}/kde4/activitymanager_uihandler_declarative.so
-%attr(755,root,root) %{_libdir}/kde4/activitymanager_uihandler_kdialog.so
 %attr(755,root,root) %{_libdir}/kde4/activitymanager_plugin_virtualdesktopswitch.so
 %attr(755,root,root) %{_libdir}/kde4/kactivitymanagerd_fileitem_linking_plugin.so
 %attr(755,root,root) %{_libdir}/kde4/kcm_activities.so
@@ -78,10 +77,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/imports/org/kde/activities/models/libkactivities-models-component-plugin.so
 %attr(755,root,root) %{_libdir}/libkactivities.so.*.*.*
 %attr(755,root,root) %{_libdir}/libkactivities-models.so.*.*.*
-%{_datadir}/apps/plasma/packages/org.kde.ActivityManager.UiHandler
 %{_datadir}/kde4/services/activities.protocol
 %{_datadir}/kde4/services/activitymanager-plugin-activityranking.desktop
 %{_datadir}/kde4/services/activitymanager-plugin-globalshortcuts.desktop
+%{_datadir}/kde4/services/activitymanager-plugin-nepomuk.desktop
 %{_datadir}/kde4/services/activitymanager-plugin-slc.desktop
 %{_datadir}/kde4/services/activitymanager-plugin-sqlite.desktop
 %{_datadir}/kde4/services/activitymanager-plugin-virtualdesktopswitch.desktop
